@@ -1,0 +1,10 @@
+/* red.css */
+.box {
+	background-color: red;
+}
+/* a.css */
+@supports (display: flex) {
+	.box {
+	background-color: green;
+}
+}

@@ -1,0 +1,6 @@
+/* a.css */
+@media screen {
+    .box {
+	background-color: green;
+}
+}

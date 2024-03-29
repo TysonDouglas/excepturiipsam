@@ -1,0 +1,29 @@
+/* b.css */
+/* green.css */
+.box {
+	background-color: green;
+}
+/* a.css */
+/* red.css */
+@media all {
+	.box {
+	background-color: red;
+}
+}
+/* c.css */
+/* a.css */
+/* red.css */
+@media not print {
+	.box {
+	background-color: red;
+}
+}
+/* b.css */
+/* green.css */
+@media not print {
+	@media screen {
+		.box {
+	background-color: green;
+}
+	}
+}

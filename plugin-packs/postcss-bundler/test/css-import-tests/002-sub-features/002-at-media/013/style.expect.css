@@ -1,0 +1,15 @@
+/* a.css */
+/* green.css */
+@media not print and (min-width: 1px) {
+    .box {
+	background-color: green;
+}
+}
+/* red.css */
+@media not print and (min-width: 1px) {
+    @media not screen and (min-height: 1px) {
+        .box {
+	background-color: red;
+}
+    }
+}

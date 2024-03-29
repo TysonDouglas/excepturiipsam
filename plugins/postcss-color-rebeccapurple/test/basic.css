@@ -1,0 +1,17 @@
+body {
+	color: rebeccapurple;
+	background: linear-gradient(rebeccapurple, blue 50%, rebeccapurple);
+}
+
+footer {
+	color: RebeccaPurple;
+}
+
+.test-manual-fallback {
+	color: purple;
+	color: rebeccapurple;
+}
+
+to-clone {
+	color: rebeccapurple;
+}

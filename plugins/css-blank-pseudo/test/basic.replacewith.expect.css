@@ -1,0 +1,90 @@
+.css-blank.js-blank-pseudo, .js-blank-pseudo .css-blank {
+	order: 1;
+}
+
+:blank {
+	order: 1;
+}
+
+.css-blank.js-blank-pseudo,
+.js-blank-pseudo .css-blank,
+.css-blank.js-blank-pseudo test,
+.js-blank-pseudo .css-blank test,
+test.js-blank-pseudo .css-blank,
+.js-blank-pseudo test .css-blank,
+test.js-blank-pseudo test.css-blank,
+.js-blank-pseudo test test.css-blank,
+test.js-blank-pseudo .css-blank test,
+.js-blank-pseudo test .css-blank test,
+test.js-blank-pseudo test.css-blank test,
+.js-blank-pseudo test test.css-blank test,
+test.js-blank-pseudo .css-blank .css-blank test,
+.js-blank-pseudo test .css-blank .css-blank test,
+test.js-blank-pseudo :matches(.css-blank) test,
+.js-blank-pseudo test :matches(.css-blank) test,
+test.js-blank-pseudo :matches(.css-blank test) test,
+.js-blank-pseudo test :matches(.css-blank test) test,
+test.js-blank-pseudo :matches(test .css-blank) test,
+.js-blank-pseudo test :matches(test .css-blank) test,
+test.js-blank-pseudo :matches(test test.css-blank) test,
+.js-blank-pseudo test :matches(test test.css-blank) test,
+test.js-blank-pseudo :matches(test .css-blank test) test,
+.js-blank-pseudo test :matches(test .css-blank test) test,
+test.js-blank-pseudo :matches(test test.css-blank test) test,
+.js-blank-pseudo test :matches(test test.css-blank test) test,
+test.js-blank-pseudo :matches(test .css-blank .css-blank test) test,
+.js-blank-pseudo test :matches(test .css-blank .css-blank test) test {
+	order: 2;
+}
+
+:blank,
+:blank test,
+test :blank,
+test test:blank,
+test :blank test,
+test test:blank test,
+test :blank :blank test,
+test :matches(:blank) test,
+test :matches(:blank test) test,
+test :matches(test :blank) test,
+test :matches(test test:blank) test,
+test :matches(test :blank test) test,
+test :matches(test test:blank test) test,
+test :matches(test :blank :blank test) test {
+	order: 2;
+}
+
+:ignore-blank,
+:blank-ignore,
+:ignoreblank,
+:blankignore {
+	order: 3;
+}
+
+:blank(ignore) {
+	order: 4;
+}
+
+test:not(.css-blank).js-blank-pseudo, .js-blank-pseudo test:not(.css-blank) {
+	order: 5;
+}
+
+test:not(:blank) {
+	order: 5;
+}
+
+uppercase.js-blank-pseudo .css-blank, .js-blank-pseudo uppercase .css-blank {
+	order: 6;
+}
+
+uppercase :BLaNK {
+	order: 6;
+}
+
+.css-blank.js-blank-pseudo, .js-blank-pseudo .css-blank {
+	to-clone: 1;
+}
+
+:blank {
+	to-clone: 1;
+}

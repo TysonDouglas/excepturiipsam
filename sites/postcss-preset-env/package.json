@@ -1,0 +1,116 @@
+{
+	"name": "@csstools/postcss-preset-env-www",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Site for PostCSS Preset Env",
+	"contributors": [
+		{
+			"name": "Antonio Laguna",
+			"email": "antonio@laguna.es",
+			"url": "https://antonio.laguna.es"
+		},
+		{
+			"name": "Romain Menke",
+			"email": "romainmenke@gmail.com"
+		}
+	],
+	"license": "MIT-0",
+	"homepage": "https://github.com/csstools/postcss-plugins/tree/main/sites/postcss-preset-env#readme",
+	"bugs": "https://github.com/csstools/postcss-plugins/issues",
+	"scripts": {
+		"start": "npm-run-all clean --parallel css js browsersync eleventy",
+		"css": "postcss src/static/css/styles.css -o dist/static/css/styles.css --watch",
+		"js": "rollup -c rollup.config.mjs -w",
+		"eleventy": "eleventy --watch",
+		"clean": "node -e \"fs.rmSync('./dist', { recursive: true, force: true }); fs.mkdirSync('./dist');\"",
+		"browsersync": "browser-sync start --server 'dist' --files 'dist' --port 8080 --no-notify",
+		"build": "npm run clean && npm run build:css && npm run build:js && npm run build:eleventy",
+		"build:js": "rollup -c rollup.config.mjs",
+		"build:css": "postcss src/static/css/styles.css -o dist/static/css/styles.css --env production",
+		"build:eleventy": "NODE_ENV=production eleventy"
+	},
+	"engines": {
+		"node": "^14 || ^16 || >=18"
+	},
+	"stylelint": {
+		"extends": "stylelint-config-standard",
+		"rules": {
+			"indentation": "tab",
+			"property-no-unknown": [
+				true,
+				{
+					"ignoreProperties": [
+						"font-smoothing"
+					]
+				}
+			],
+			"selector-class-pattern": null,
+			"no-descending-specificity": null,
+			"value-keyword-case": null,
+			"number-leading-zero": "never"
+		}
+	},
+	"keywords": [
+		"postcss",
+		"css",
+		"postcss-plugin",
+		"specifications",
+		"specs",
+		"features",
+		"lists",
+		"stages",
+		"w3c",
+		"csswg",
+		"future",
+		"next"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/csstools/postcss-plugins.git",
+		"directory": "sites/postcss-preset-env"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.0",
+		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@babel/core": "^7.24.3",
+		"@babel/preset-env": "^7.24.3",
+		"@codemirror/lang-css": "^6.2.1",
+		"@codemirror/lang-javascript": "^6.2.2",
+		"@codemirror/state": "^6.4.0",
+		"@codemirror/theme-one-dark": "^6.1.0",
+		"@codemirror/view": "^6.26.0",
+		"@csstools/css-calc": "^1.1.6",
+		"@csstools/css-color-parser": "^1.6.2",
+		"@csstools/css-parser-algorithms": "^2.2.0",
+		"@csstools/css-tokenizer": "^2.1.1",
+		"@csstools/postcss-bundler": "^1.0.9",
+		"@csstools/postcss-minify": "^1.1.0",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"babel-eslint": "^10.1.0",
+		"browser-sync": "^3.0.2",
+		"codemirror": "^6.0.1",
+		"cssdb": "^7.11.2",
+		"eslint": "^8.57.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-plugin-import": "^2.29.1",
+		"luxon": "^3.4.4",
+		"markdown-it": "^14.1.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.36",
+		"postcss-cli": "^11.0.0",
+		"postcss-preset-env": "^9.5.2",
+		"rollup": "^4.12.0",
+		"rollup-plugin-filesize": "^10.0.0",
+		"rollup-plugin-livereload": "^2.0.5",
+		"tslib": "^2.6.2",
+		"typescript": "^5.4.3"
+	},
+	"volta": {
+		"node": "20.10.0"
+	}
+}

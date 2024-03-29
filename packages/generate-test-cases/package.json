@@ -1,0 +1,39 @@
+{
+	"name": "@csstools/generate-test-cases",
+	"description": "PostCSS test case generator",
+	"version": "1.0.0",
+	"author": "",
+	"license": "MIT-0",
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/csstools"
+		},
+		{
+			"type": "opencollective",
+			"url": "https://opencollective.com/csstools"
+		}
+	],
+	"private": true,
+	"engines": {
+		"node": "^14 || ^16 || >=18"
+	},
+	"type": "module",
+	"main": "src/index.mjs",
+	"devDependencies": {
+		"mdn-data": "^2.4.2"
+	},
+	"scripts": {
+		"build": "exit 0;",
+		"generate": "node ./src/index.mjs",
+		"lint": "node ../../.github/bin/format-package-json.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/csstools/postcss-plugins.git",
+		"directory": "packages/generate-test-cases"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

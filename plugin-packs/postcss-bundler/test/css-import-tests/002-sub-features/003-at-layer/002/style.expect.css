@@ -1,0 +1,20 @@
+/* a.css */
+@media print {
+    @layer a {
+        .box {
+	background-color: green;
+}
+    }
+}
+/* b.css */
+@layer b {
+    .box {
+	background-color: red;
+}
+}
+/* a.css */
+@layer a {
+    .box {
+	background-color: green;
+}
+}

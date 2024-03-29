@@ -1,0 +1,13 @@
+/* a.css */
+/* b.css */
+@supports (display: block) {
+    @layer a {
+        @supports (width: 10px) {
+            @layer b {
+                .box {
+	background-color: green;
+}
+            }
+        }
+    }
+}

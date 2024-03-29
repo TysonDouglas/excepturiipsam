@@ -1,0 +1,14 @@
+@design-tokens url('./tokens.json') format('style-dictionary3');
+
+.foo {
+	color: design-token('color.background.primary');
+	padding-top: design-token('size.spacing.small');
+	padding-left: design-token('size.spacing.small' to px);
+	padding-bottom: design-token('size.spacing.small' to rem);
+}
+
+@media (min-width: design-token('viewport.medium')) {
+	.foo {
+		padding-bottom: design-token('size.spacing.medium-alias' to rem);
+	}
+}

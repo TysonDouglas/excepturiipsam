@@ -1,0 +1,20 @@
+{
+	"name": "@csstools/e2e",
+	"private": true,
+	"version": "0.0.0",
+	"description": "",
+	"workspaces": [
+		"browserslist/*",
+		"interop/*",
+		"postcss-cli/*",
+		"typescript/*",
+		"webpack/*"
+	],
+	"scripts": {
+		"build": "npm run build --workspaces --if-present",
+		"test": "npm run test --workspaces --if-present"
+	},
+	"volta": {
+		"extends": "../package.json"
+	}
+}

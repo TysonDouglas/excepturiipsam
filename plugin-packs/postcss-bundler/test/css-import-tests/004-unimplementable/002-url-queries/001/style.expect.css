@@ -1,0 +1,5 @@
+/* ./a.css */
+.box {
+	background-color: red;
+}
+@import url("./a.css?background-color=green");

@@ -1,0 +1,12 @@
+:root {
+	--one: 1em;
+	--two: .5em;
+	--three: '41ic';
+}
+
+@supports (font-size: 1ic) {
+:root {
+	--one: 1ic;
+	--two: .5ic;
+}
+}

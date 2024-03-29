@@ -1,0 +1,29 @@
+.block-side {
+	padding-block-start: 1px;
+	padding-block-end: 2px;
+}
+
+.inline-side {
+	padding-inline-start: 1px;
+	padding-inline-end: 2px;
+}
+
+.block-single {
+	padding-block: 1px;
+}
+
+.block-double {
+	padding-block: 1px 2px;
+}
+
+.inline-single {
+	padding-inline: 1px;
+}
+
+.inline-double {
+	padding-inline: 1px 2px;
+}
+
+.error-1 {
+	padding-block: 1px 2px 3px 4px;
+}

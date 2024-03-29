@@ -1,0 +1,18 @@
+[
+	{
+		"type": "media-query-with-type",
+		"string": "print",
+		"modifier": [],
+		"mediaType": [
+			[
+				"ident-token",
+				"print",
+				0,
+				4,
+				{
+					"value": "print"
+				}
+			]
+		]
+	}
+]

@@ -1,0 +1,433 @@
+:root {
+	/* nested var */
+	--prop-1: red;
+
+	/* multi-line */
+	--prop-2: red;
+
+	--prop-3: 1px;
+	--prop-4: 1px;
+	--prop-4: 2ica;
+	--prop-5: 1px;
+	--prop-5: 2ic(1);
+
+	/* interleaved */
+	--gradient-prop-6: linear-gradient(90deg, black 25%, black 50%, blue 50%, blue 75%);
+	--gradient-prop-7: conic-gradient(yellowgreen 40%, gold 0deg, gold 75%, #f06 0deg);
+	--gradient-prop-8: repeating-linear-gradient(90deg, black 25%, black 50%, blue 50%, blue 75%);
+	--gradient-prop-9: repeating-conic-gradient(yellowgreen 40%, gold 0deg, gold 75%, #f06 0deg);
+	--gradient-prop-10: repeating-radial-gradient(red 0, red 8%, yellow 8%, yellow 16%, blue 16%, blue 24%);
+
+	/* multiple values space separated */
+	--prop-8: 1px solid red;
+
+	--prop-9: red;
+
+	--prop-10: magenta;
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+	--prop-1: oklch(40% 0.234 0.39 / var(--opacity-50));
+}
+}
+
+@supports (background: linear-gradient(red 0%, red 0% 1%, red 2%)) and (color: color(xyz 0 0 0%)) and (color: rgba(0 0 0 / 0)) {
+:root {
+	--prop-2: linear-gradient(
+		45deg,
+		rgba(255 255 255 / 0.15) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255, 255, 255, 0.15) 45% 50%,
+		color(rec2020 0.64331 0.19245 0.16771) 75%,
+		transparent 75%,
+		transparent
+	);
+}
+}
+
+@supports (font-size: 1ic) {
+:root {
+	--prop-3: 2ic;
+}
+}
+
+@supports (background: linear-gradient(red 0%, red 0% 1%, red 2%)) {
+:root {
+	--gradient-prop-6: linear-gradient(90deg, black 25% 50%, blue 50% 75%);
+}
+}
+
+@supports (background: conic-gradient(red 0deg, red 0deg 1deg, red 2deg)) {
+:root {
+	--gradient-prop-7: conic-gradient(yellowgreen 40%, gold 0deg 75%, #f06 0deg);
+}
+}
+
+@supports (background: repeating-linear-gradient(red 0%, red 0% 1%, red 2%)) {
+:root {
+	--gradient-prop-8: repeating-linear-gradient(90deg, black 25% 50%, blue 50% 75%);
+}
+}
+
+@supports (background: repeating-conic-gradient(from 0deg, red 0deg, red 0deg 1deg, red 2deg)) {
+:root {
+	--gradient-prop-9: repeating-conic-gradient(from 0deg, yellowgreen 40deg, gold 60deg 75deg, #f06 0deg);
+}
+}
+
+@supports (background: repeating-radial-gradient(red, red 1px 2px, red 3px)) {
+:root {
+	--gradient-prop-10: repeating-radial-gradient(red 0 8%, yellow 8% 16%, blue 16% 24%);
+}
+}
+
+@supports (color: oklab(0% 0 0%)) {
+:root {
+	--prop-8: 1px solid oklch(40% 0.234 0.39 / var(--opacity-50));
+}
+}
+
+@supports (color: rgb(0, 0, 0, 0)) {
+:root {
+	--prop-9: rgb(1,1,1,1);
+}
+}
+
+@supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+:root {
+	--prop-10: rgba(from magenta calc(r * 2) g b);
+}
+}
+
+.initial {
+	--prop-1: red;
+	--prop-1: initial;
+}
+
+.white-space {
+	--prop-1: red;
+	--prop-1:;
+
+	--prop-2: red;
+	--prop-2: ;
+
+	--prop-3: red;
+	--prop-3:    ;
+}
+
+.not-root {
+	--color-1: red;
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+.not-root {
+	--color-1: color(srgb 0.64331 0.19245 0.16771);
+}
+}
+
+:root {
+	--color-1: red;
+
+	--color-2: blue;
+
+	--opacity-50: 0.5;
+	--color-3: purple;
+
+	--point-5: 0.5;
+	--color-4: green;
+
+	--color-5: yellow;
+
+	--color-6: orange;
+
+	--color-7: pink;
+
+	--color-8: pink;
+
+	--color-9: pink;
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+	--color-1: color(srgb 0.64331 0.19245 0.16771);
+	--color-2: color(srgb 0.64331 0.19245 0.16771 / 50);
+	--color-3: color(srgb 0.64331 0.19245 0.16771 / var(--opacity-50));
+	--color-4: color(srgb 0.64331 var(--point-5) 0.16771 / var(--opacity-50));
+	--color-5: color(srgb 0.64331   0.19245 0.16771 / calc(1 / 2));
+}
+}
+
+@supports (color: color(xyz 0 0 0%)) {
+:root {
+	--color-6: color(rec2020 0.64331 0.19245 0.16771);
+}
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+	--color-7: color(srgb 0.999 0.95 0.95);
+	--color-8: color(display-p3 0.999 0.95 0.95);
+}
+}
+
+@supports (color: color(xyz 0 0 0%)) {
+:root {
+	--color-9: color(rec2020 0.999 0.95 0.95);
+}
+}
+
+:root {
+		/* interleaved with color interpolation */
+		--gradient-prop-6: linear-gradient(90deg, black 25%, black 50%, blue 50%, blue 75%);
+		--gradient-prop-7: conic-gradient(yellowgreen 40%, gold 0deg, gold 75%, #f06 0deg);
+		--gradient-prop-8: repeating-linear-gradient(90deg, black 25%, black 50%, blue 50%, blue 75%);
+		--gradient-prop-9: repeating-conic-gradient(yellowgreen 40%, gold 0deg, gold 75%, #f06 0deg);
+		--gradient-prop-10: repeating-radial-gradient(red 0, red 8%, yellow 8%, yellow 16%, blue 16%, blue 24%);
+}
+
+@supports (background: linear-gradient(in oklch, red 0%, red 0% 1%, red 2%)) {
+:root {
+		--gradient-prop-6: linear-gradient(in oklch 90deg, black 25% 50%, blue 50% 75%);
+}
+}
+
+@supports (background: conic-gradient(in oklch, red 0deg, red 0deg 1deg, red 2deg)) {
+:root {
+		--gradient-prop-7: conic-gradient(in oklch, yellowgreen 40%, gold 0deg 75%, #f06 0deg);
+}
+}
+
+@supports (background: repeating-linear-gradient(in oklch, red 0%, red 0% 1%, red 2%)) {
+:root {
+		--gradient-prop-8: repeating-linear-gradient(in oklch 90deg, black 25% 50%, blue 50% 75%);
+}
+}
+
+@supports (background: repeating-conic-gradient(in oklch from 0deg, red 0deg, red 0deg 1deg, red 2deg)) {
+:root {
+		--gradient-prop-9: repeating-conic-gradient(in oklch from 0deg, yellowgreen 40deg, gold 60deg 75deg, #f06 0deg);
+}
+}
+
+@supports (background: repeating-radial-gradient(in oklch, red, red 1px 2px, red 3px)) {
+:root {
+		--gradient-prop-10: repeating-radial-gradient(in oklch, red 0 8%, yellow 8% 16%, blue 16% 24%);
+}
+}
+
+:root {
+	/* color-mix() */
+	--color-mix-1: plum;
+	--color-mix-2: plum;
+	--color-mix-3: plum;
+	--color-mix-4: plum;
+	--color-mix-5: plum;
+	--color-mix-6: plum;
+	--color-mix-7: plum;
+}
+
+@supports (color: color-mix(in lch, red, blue)) {
+:root {
+	--color-mix-1: color-mix(in lch, purple 50%, plum 50%);
+	--color-mix-2: color-mix(in lch longer, purple 50%, plum 50%);
+	--color-mix-3: color-mix(in lab, purple 50%, plum 50%);
+	--color-mix-4: color-mix(in srgb, purple, plum 50%);
+	--color-mix-5: color-mix(in srgb-linear, purple 50%, plum);
+	--color-mix-6: color-mix(in xyz, purple, plum);
+	--color-mix-7: color-mix(
+		/* color space */
+		in xyz,
+		/* first color */
+		purple,
+		/* second color */
+		plum
+	);
+}
+}
+
+:root {
+	/* Not expected to be handled here at the moment, but might be needed in the future */
+	--color-functional-notation-percentage-alpha: rgba(0, 0, 0, 1);
+	--color-functional-notation-percentage-alpha: rgba(0, 0, 0, 100%);
+}
+
+:root {
+	/* color-mix() */
+	--color-mix-1: plum;
+	--color-mix-2: plum;
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+	--color-mix-1: color(display-p3 0.64331 0.19245 0.16771);
+}
+}
+
+@supports (color: color-mix(in lch, red, blue)) {
+:root {
+	--color-mix-1: color-mix(in lch, purple 50%, plum 50%);
+	--color-mix-2: color-mix(in lch longer, purple 50%, plum 50%);
+}
+}
+
+@supports (color: color(display-p3 0 0 0%)) {
+:root {
+	--color-mix-2: color(display-p3 0.64331 0.19245 0.16771);
+}
+}
+
+:root {
+	--color-rcs-1: green;
+	--color-rcs-2: green;
+	--color-rcs-3: green;
+	--color-rcs-4: green;
+	--color-rcs-5: green;
+	--color-rcs-6: green;
+	--color-rcs-7: green;
+	--color-rcs-8: green;
+	--color-rcs-9: green;
+	--color-rcs-10: green;
+	--color-rcs-11: green;
+	--color-rcs-12: green;
+}
+
+@supports (color: color(xyz 0 0 0%)) and (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+:root {
+	--color-rcs-1: color(from color(a98-rgb 0.7 0.5 0.3) a98-rgb r g b / alpha);
+	--color-rcs-2: color(from color(a98-rgb 0.7 0.5 0.3) a98-rgb r g b / none);
+	--color-rcs-3: color(from color(prophoto-rgb 0.7 0.5 0.3) prophoto-rgb r g b);
+	--color-rcs-4: color(from color(prophoto-rgb 0.7 0.5 0.3) prophoto-rgb r g none);
+}
+}
+
+@supports (color: hwb(0 0% 0%)) and (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+:root {
+	--color-rcs-5: hwb(from hwb(50deg 20% 30%) h w b);
+}
+}
+
+@supports (color: lab(0% 0 0%)) and (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+:root {
+	--color-rcs-6: lab(from lab(40% 56.6 39) l a b);
+	--color-rcs-7: lch(from lch(40% 56.6 39) l c h);
+}
+}
+
+@supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) and (color: oklab(0% 0 0%)) {
+:root {
+	--color-rcs-8: oklab(from oklab(40% 0.566 0.39) l a b);
+	--color-rcs-9: oklch(from oklch(40% 0.566 39deg) l c h);
+}
+}
+
+@supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+:root {
+	--color-rcs-10: rgb(from blue r g b);
+	--color-rcs-11: rgb(from blue r g b / alpha);
+	--color-rcs-12: hsl(from blue h s l / alpha);
+}
+}
+
+:root {
+	--color-rcs-invalid-1: green;
+	--color-rcs-invalid-2: green;
+	--color-rcs-invalid-3: green;
+	--color-rcs-invalid-4: green;
+	--color-rcs-invalid-5: green;
+	--color-rcs-invalid-5: rgb(from blue r, g, b);
+	--color-rcs-invalid-6: green;
+	--color-rcs-invalid-6: hsl(from blue h, s, l);
+	--color-rcs-invalid-7: green;
+	--color-rcs-invalid-7: rgb(from blue r, g, b, alpha);
+	--color-rcs-invalid-8: green;
+	--color-rcs-invalid-8: hsl(from blue h, s, l, alpha);
+}
+
+@supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+:root {
+	--color-rcs-invalid-1: rgba(from blue r g b);
+	--color-rcs-invalid-2: hsla(from blue h s l);
+	--color-rcs-invalid-3: rgba(from blue r g b / alpha);
+	--color-rcs-invalid-4: hsla(from blue h s l / alpha);
+}
+}
+
+.property-with-var--1 {
+	--opacity: 1;
+	color: rgba(87, 107, 149, 1);
+}
+
+@supports (color: rgb(0 0 0 / 0)) {
+.property-with-var--1 {
+	color: rgb(87 107 149 / var(--opacity));
+}
+}
+
+.property-with-var--1-1 {
+	--opacity: 1;
+	color: rgba(87, 107, 149, var(--opacity));
+}
+
+@supports (color: rgb(0 0 0 / 0)) {
+.property-with-var--1-1 {
+	color: rgb(87 107 149 / var(--opacity));
+}
+}
+
+.property-with-var--2 {
+	--opacity: 1;
+	color: rgba(87, 107, 149, 1);
+}
+
+@supports (color: rgb(0 0 0 / 0)) {
+.property-with-var--2 {
+	color: rgb(87 107 149 / calc(var(--opacity) / 2));
+}
+}
+
+.property-with-var--3 {
+	--length: 1px;
+	top: 2px;
+	top: var(--length);
+}
+
+.property-with-notvar--1 {
+	--opacity: 1;
+	color: rgba(87, 107, 149, 1);
+	color: rgb(87 107 149 / notvar(--opacity));
+}
+
+/* CSS Nesting */
+:root {
+	@media screen {
+		--prop-8: 1px solid red;
+	}
+
+@supports (color: oklab(0% 0 0%)) {
+@media screen {
+		--prop-8: 1px solid oklch(40% 0.234 0.39 / var(--opacity-50));
+	}
+}
+}
+
+:root {
+	--color-light-dark-1: green;
+}
+
+@supports (color: light-dark(red, red)) {
+:root {
+	--color-light-dark-1: light-dark(green, blue);
+}
+}
+
+:root {
+	color: var(--green);
+}
+
+@supports (color: light-dark(red, red)) {
+:root {
+	color: light-dark(var(--green), blue);
+}
+}

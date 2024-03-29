@@ -1,0 +1,24 @@
+.test-hwb {
+	color-1: rgb(0, 196, 255);
+	color-2: rgba(0, 196, 255, 0.5);
+	color-3: rgb(26, 26, 26);
+	color-4: rgb(51, 51, 51);
+	color-5: rgb(77, 77, 77);
+	color-6: rgb(102, 102, 102);
+	color-7: rgb(128, 128, 128);
+	color-8: rgb(153, 153, 153);
+	color-9: hwb(none 60% 40%);
+	color-10: rgba(153, 153, 153, var(--alpha));
+}
+
+.test-ignore {
+	color: hwb(194, 0%, 0%, .5); /* with comma-separated values */
+}
+
+to-clone {
+	color: rgb(153, 153, 153);
+}
+
+.test-css-color-5-interop {
+	color-1: hwb(from rgb(179, 157, 51) h w b);
+}

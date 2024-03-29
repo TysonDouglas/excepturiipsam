@@ -1,0 +1,64 @@
+{
+  "name": "excepturiipsam",
+  "version": "1.0.0",
+  "author": "CliftonCummerata",
+  "license": "MIT-0",
+  "engines": {
+    "node": "^14 || ^16 || >=18"
+  },
+  "workspaces": [
+    "packages/color-helpers",
+    "packages/css-tokenizer",
+    "packages/css-parser-algorithms",
+    "packages/css-calc",
+    "packages/css-color-parser",
+    "packages/cascade-layer-name-parser",
+    "packages/media-query-list-parser",
+    "packages/*",
+    "plugins/postcss-progressive-custom-properties",
+    "plugins/postcss-debug-logger",
+    "plugins/*",
+    "plugin-packs/*",
+    "cli/*",
+    "experimental/*",
+    "plugins-stylelint/*"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
+    "@microsoft/api-extractor": "^7.43.0",
+    "@microsoft/api-documenter": "^7.24.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@stryker-mutator/core": "^8.2.6",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "knip": "^5.4.0",
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.3"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present",
+    "docs": "npm run docs --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present && eslint ./ --ext .js --ext .mjs --ext .cjs --ext .ts --ext .mts --no-error-on-unmatched-pattern && bash .github/bin/detect-executable-files/detect-executable-files.sh && node .github/bin/license/check-license.mjs",
+    "new-plugin": "node ./.github/bin/new-plugin.mjs",
+    "release-plan": "node .github/bin/release-plan/release-plan.mjs",
+    "release-plan:dry-run": "node .github/bin/release-plan/release-plan.mjs --dry-run",
+    "test": "npm run test --workspaces --if-present",
+    "knip": "knip"
+  },
+  "volta": {
+    "node": "20.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TysonDouglas/excepturiipsam.git"
+  },
+  "homepage": "https://github.com/TysonDouglas/excepturiipsam.git"
+}

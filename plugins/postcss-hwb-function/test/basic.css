@@ -1,0 +1,24 @@
+.test-hwb {
+	color-1: hwb(194 0% 0%);
+	color-2: hwb(194 0% 0% / .5);
+	color-3: hwb(0 10% 90%);
+	color-4: hwb(0 20% 80%);
+	color-5: hwb(0 30% 70%);
+	color-6: hwb(0 40% 60%);
+	color-7: hwb(0 50% 50%);
+	color-8: hwb(0 60% 40%);
+	color-9: hwb(none 60% 40%);
+	color-10: hwb(0 60% 40% / var(--alpha));
+}
+
+.test-ignore {
+	color: hwb(194, 0%, 0%, .5); /* with comma-separated values */
+}
+
+to-clone {
+	color: hwb(0 60% 40%);
+}
+
+.test-css-color-5-interop {
+	color-1: hwb(from hwb(50deg 20% 30%) h w b);
+}

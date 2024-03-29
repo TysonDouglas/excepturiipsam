@@ -1,0 +1,9 @@
+.element {
+	block-size: 100px;
+	max-inline-size: 400px;
+	inline-size: 200px;
+	padding-block: 10px 20px;
+	margin-inline: auto;
+	border-block-width: 2px;
+	border-block-style: solid;
+}

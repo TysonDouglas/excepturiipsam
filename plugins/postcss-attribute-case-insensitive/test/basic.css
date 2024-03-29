@@ -1,0 +1,59 @@
+[data-foo=test i] {
+	order: 1;
+}
+
+[foo="a b" i] {
+	order: 2;
+}
+
+[foo=a]{
+	order: 3;
+}
+
+[foo=a i],[foobar=b],[bar=c i]{
+	order: 4;
+}
+
+[foo="a" i] {
+	order: 5.0;
+}
+
+[foo="b" I] {
+	order: 5.1;
+}
+
+[foo="c"i] {
+	order: 5.2;
+}
+
+[foo="d"I] {
+	order: 5.3;
+}
+
+[foo="e" i ] {
+	order: 5.4;
+}
+
+[foo="f" I ] {
+	order: 5.5;
+}
+
+[foo="g" i
+] {
+	order: 5.6;
+}
+
+[foo="h" I
+] {
+	order: 5.7;
+}
+
+[foo="a b" i] {
+	to-clone: 1;
+}
+
+[foo="ab" i]:not([foo="ab" i], :is(:is([foo="ab" i]))) {
+	/* Case insenstive attribute matching is quite old, it's fine that we don't support this in pseudo class functions */
+	/* However, we must ensure that we don't have infinite loops when authors write selectors like this one */
+	order: 6;
+}

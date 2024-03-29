@@ -1,0 +1,39 @@
+.test-invalid-params {
+	background-image-1: image-set();
+	background-image-2: image-set(
+		url(img/test.png)
+	);
+	background-image-3: image-set(
+		1x
+	);
+}
+
+.test-invalid-commas {
+	background-image-1: image-set(
+		url(img/test.png) 1x,
+	);
+	background-image-2: image-set(
+		url(img/test.png) 1x,
+		url(img/test-2x.png) 2x,
+	);
+}
+
+.test-invalid-images {
+	background-1: image-set(
+		image-set(
+			url(img/test.png) 1x
+		) 1x
+	);
+	background-2: image-set(
+		calc(1rem + 1px) 1x
+	);
+}
+
+.test-invalid-resolutions {
+	background-image-1: image-set(
+		url(img/test.png) 1
+	);
+	background-image-2: image-set(
+		url(img/test.png) 1omg
+	);
+}

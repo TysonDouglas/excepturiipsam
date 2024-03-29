@@ -1,0 +1,17 @@
+/* a.css */
+@layer a;
+/* b.css */
+@layer b;
+@import url("http://localhost:8080/c.css");
+/* green.css */
+@layer b{
+    .box {
+	background-color: green;
+}
+}
+/* red.css */
+@layer a{
+    .box {
+	background-color: red;
+}
+}

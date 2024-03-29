@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"declarationDir": "./dist",
+		"lib": ["es2020"],
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"outDir": "./dist",
+		"target": "es2020",
+		"strict": true
+	},
+	"include": ["index.ts"],
+	"exclude": ["./index.mjs"],
+}

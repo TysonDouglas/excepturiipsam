@@ -1,0 +1,33 @@
+/* b.css */
+/* green.css */
+@layer {
+    .box {
+	background-color: green;
+}
+}
+/* a.css */
+/* red.css */
+@layer {
+    .box {
+	background-color: red;
+}
+}
+/* c.css */
+/* a.css */
+/* red.css */
+@layer {
+    @layer {
+        .box {
+	background-color: red;
+}
+    }
+}
+/* b.css */
+/* green.css */
+@layer {
+    @layer {
+        .box {
+	background-color: green;
+}
+    }
+}

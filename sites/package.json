@@ -1,0 +1,38 @@
+{
+	"name": "@csstools/www",
+	"private": true,
+	"version": "1.0.0",
+	"description": "",
+	"contributors": [
+		{
+			"name": "Antonio Laguna",
+			"email": "antonio@laguna.es",
+			"url": "https://antonio.laguna.es"
+		},
+		{
+			"name": "Romain Menke",
+			"email": "romainmenke@gmail.com"
+		}
+	],
+	"license": "MIT-0",
+	"engines": {
+		"node": "^14 || ^16 || >=18"
+	},
+	"workspaces": [
+		"postcss-preset-env"
+	],
+	"devDependencies": {
+		"stylelint": "^16.3.0",
+		"stylelint-config-standard": "^36.0.0"
+	},
+	"scripts": {
+		"setup-workspace": "npm ci",
+		"build": "npm run build --workspaces --if-present",
+		"clean": "npm run clean --workspaces --if-present",
+		"lint": "npm run lint --workspaces --if-present",
+		"start": "npm run build --workspaces --if-present"
+	},
+	"volta": {
+		"extends": "../package.json"
+	}
+}

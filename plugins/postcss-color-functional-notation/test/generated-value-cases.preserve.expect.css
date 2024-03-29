@@ -1,0 +1,171 @@
+.order-0 {
+	order: rgb(178, 34, 34) !important;
+	order: rgba(178 34 34 / 1) !important;
+}
+
+.order-1 {
+	order: var(1, rgb(178, 34, 34));
+}
+
+@supports (color: rgba(0 0 0 / 0)) {
+.order-1 {
+	order: var(1, rgba(178 34 34 / 1));
+}
+}
+
+.order-2 {
+	order: var(rgb(178, 34, 34), 1);
+}
+
+@supports (color: rgba(0 0 0 / 0)) {
+.order-2 {
+	order: var(rgba(178 34 34 / 1), 1);
+}
+}
+
+.order-3 {
+	order: var(rgb(178, 34, 34), rgb(178, 34, 34));
+}
+
+@supports (color: rgba(0 0 0 / 0)) {
+.order-3 {
+	order: var(rgba(178 34 34 / 1), rgba(178 34 34 / 1));
+}
+}
+
+.order-4 {
+	order: prergba(178 34 34 / 1);
+}
+
+.order-5 {
+	order: pre rgb(178, 34, 34);
+	order: pre rgba(178 34 34 / 1);
+}
+
+.order-6 {
+	order: pre,rgb(178, 34, 34);
+	order: pre,rgba(178 34 34 / 1);
+}
+
+.order-7 {
+	order: rgb(178, 34, 34)post;
+	order: rgba(178 34 34 / 1)post;
+}
+
+.order-8 {
+	order: rgb(178, 34, 34) post;
+	order: rgba(178 34 34 / 1) post;
+}
+
+.order-9 {
+	order: rgb(178, 34, 34),post;
+	order: rgba(178 34 34 / 1),post;
+}
+
+/* rgba(178 34 34 / 1) */
+
+:root {
+	--some-var: rgb(178, 34, 34);
+}
+
+@supports (color: rgba(0 0 0 / 0)) {
+:root {
+	--some-var: rgba(178 34 34 / 1);
+}
+}
+
+.content {
+	content: 'rgba(178 34 34 / 1)';
+}
+
+@supports (order: rgba(178 34 34 / 1)) {
+	.support {
+		order: rgba(178 34 34 / 1);
+	}
+}
+
+.order-0 {
+	order: hsl(120, 100%, 50%) !important;
+	order: hsl(120 100% 50% / 1) !important;
+}
+
+.order-1 {
+	order: var(1, hsl(120, 100%, 50%));
+}
+
+@supports (color: hsl(0 0% 0% / 0)) {
+.order-1 {
+	order: var(1, hsl(120 100% 50% / 1));
+}
+}
+
+.order-2 {
+	order: var(hsl(120, 100%, 50%), 1);
+}
+
+@supports (color: hsl(0 0% 0% / 0)) {
+.order-2 {
+	order: var(hsl(120 100% 50% / 1), 1);
+}
+}
+
+.order-3 {
+	order: var(hsl(120, 100%, 50%), hsl(120, 100%, 50%));
+}
+
+@supports (color: hsl(0 0% 0% / 0)) {
+.order-3 {
+	order: var(hsl(120 100% 50% / 1), hsl(120 100% 50% / 1));
+}
+}
+
+.order-4 {
+	order: prehsl(120 100% 50% / 1);
+}
+
+.order-5 {
+	order: pre hsl(120, 100%, 50%);
+	order: pre hsl(120 100% 50% / 1);
+}
+
+.order-6 {
+	order: pre,hsl(120, 100%, 50%);
+	order: pre,hsl(120 100% 50% / 1);
+}
+
+.order-7 {
+	order: hsl(120, 100%, 50%)post;
+	order: hsl(120 100% 50% / 1)post;
+}
+
+.order-8 {
+	order: hsl(120, 100%, 50%) post;
+	order: hsl(120 100% 50% / 1) post;
+}
+
+.order-9 {
+	order: hsl(120, 100%, 50%),post;
+	order: hsl(120 100% 50% / 1),post;
+}
+
+/* hsl(120 100% 50% / 1) */
+
+:root {
+	--some-var: hsl(120, 100%, 50%);
+}
+
+@supports (color: hsl(0 0% 0% / 0)) {
+:root {
+	--some-var: hsl(120 100% 50% / 1);
+}
+}
+
+.content {
+	content: 'hsl(120 100% 50% / 1)';
+}
+
+@supports (order: hsl(120 100% 50% / 1)) {
+	.support {
+		order: hsl(120 100% 50% / 1);
+	}
+}

@@ -1,0 +1,36 @@
+/* a.css */
+/* green.css */
+@media all {
+	@layer alpha {
+		@media print {
+			@layer alpha {
+				.box {
+	background-color: green;
+}
+			}
+		}
+	}
+}
+/* b.css */
+/* red.css */
+@media all {
+	@layer beta {
+		@media print {
+			@layer beta {
+				.box {
+	background-color: red;
+}
+			}
+		}
+	}
+}
+@layer beta {
+	.box {
+		background-color: green;
+	}
+}
+@layer alpha {
+	.box {
+		background-color: red;
+	}
+}

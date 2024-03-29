@@ -1,0 +1,23 @@
+/* a.css */
+/* b.css */
+@media (min-width: 1px) {
+	@layer a {
+		@media (min-width: 1px) {
+			@layer b {
+				.box {
+	background-color: red;
+}
+			}
+		}
+	}
+}
+@layer a.c {
+	.box {
+		background-color: green;
+	}
+}
+@layer a.b {
+	.box {
+		background-color: red;
+	}
+}

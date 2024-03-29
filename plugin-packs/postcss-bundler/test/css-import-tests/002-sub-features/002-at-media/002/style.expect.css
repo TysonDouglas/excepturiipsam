@@ -1,0 +1,12 @@
+/* a.css */
+@media screen {
+    .box {
+	background-color: green;
+}
+}
+/* b.css */
+@media print {
+    .box {
+	background-color: red;
+}
+}

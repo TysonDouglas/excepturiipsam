@@ -1,0 +1,99 @@
+.foo:is(.foo) {
+	margin-top: 16px;
+}
+
+:is(h1, h2, h3, h4, h5, h6) + p {}
+
+:is(.foo) > :is(.baz) {}
+:is(.fizz, .buzz) > :is(.foo) {}
+:is(.btn-primary,
+	.btn-success,
+	.btn-info,
+	.btn-warning,
+	.btn-danger),:is(.btn-primary,
+	.btn-success,
+	.btn-info,
+	.btn-warning,
+	.btn-danger):active {}
+
+:is(.foo,
+	.bar > .baz) + p {
+	display: block;
+}
+
+.foo > a:is(::before, ::after) img {
+	display: block;
+}
+
+:is(.foo),:is(.foo).bar {
+	color: white;
+}
+
+:is(.foo) :is(.foo):hover {
+	color: white;
+}
+
+.fo--oo > :is(h1, h2, h3) {
+	margin: auto;
+}
+
+:is(h4, h5, h6):hover .ba--z {
+	display: block;
+}
+
+/* comment */
+
+article :--heading + p {
+	margin-top: 0;
+}
+
+:is(.foo,
+	.bar > .baz) {
+	display: block;
+}
+
+/* should works with collapsed custom selectors */
+
+:is(button, .button):is(:hover, :focus) {}
+
+:is(.foo, .bar) h1 {
+	margin-top: 16px;
+}
+
+main :is(.foo) + p {
+	margin-top: 16px;
+}
+
+:is(.foo) {
+	order: 1000;
+}
+a,:is(.foo) {
+	order: 1001;
+}
+b,:is(.foo) {
+	order: 1002;
+}
+
+:is(.foo.baz) {
+	order: 1010;
+}
+a,:is(.foo.baz) {
+	order: 1011;
+}
+b,:is(.foo.baz) {
+	order: 1012;
+}
+
+:is(.foo .baz) {
+	order: 1020;
+}
+a,:is(.foo .baz) {
+	order: 1021;
+}
+b,:is(.foo .baz) {
+	order: 1022;
+}
+
+b,:is(.foo .baz) {
+	to-clone: 1;
+}
